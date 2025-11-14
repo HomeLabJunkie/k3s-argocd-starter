@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: skynetlabs-nexterm
-  namespace: default
+  namespace: nexterm
   labels:
     app: skynetlabs-nexterm
   annotations: {}
