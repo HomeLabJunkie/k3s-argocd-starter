@@ -23,7 +23,7 @@ spec:
         - -c
         - |
           echo "Cloning website content..."
-          git clone -b main --depth 1 https://github.com/homelabjunkie/nginx-website.git /website /tmp/website &&
+          git clone -b main --depth 1 https://github.com/homelabjunkie/nginx-website.git /tmp/website 
           echo "Website content cloning."
           cp -r /tmp/website/* /usr/share/nginx/html/ &&
           echo "Website content copied to Nginx directory."
