@@ -29,13 +29,13 @@ spec:
           echo "Website content copied to Nginx directory."
           ls -la /usr/share/nginx/html/
         volumeMounts:
-        - name: nginx-website
+        - name: nginx-storage
           mountPath: /usr/share/nginx/html
       containers:
       - name: nginx
         image: nginx:alpine
         volumeMounts:
-        - name: nginx-website
+        - name: nginx-storage
           mountPath: /usr/share/nginx/html
         resources:
           requests:
@@ -50,5 +50,5 @@ spec:
         - name: https
           containerPort: 443
       volumes:
-      - name: nginx-website
+      - name: nginx-storage
         emptyDir: {}
