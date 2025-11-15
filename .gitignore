@@ -15,3 +15,6 @@ instructions/
 */chatmodes/
 */instructions/
 *tunnel-creds.json
+kubeconfig.yaml
+*/kubeconfig.yaml
+# End of .gitignore
