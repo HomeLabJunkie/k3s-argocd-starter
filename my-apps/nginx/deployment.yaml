@@ -3,8 +3,10 @@ kind: Deployment
 metadata:
   name: nginx-example
   namespace: nginx-example
+  annotations: 
+    argocd.argoproj.io/sync-wave: "0"
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: nginx
@@ -13,9 +15,28 @@ spec:
       labels:
         app: nginx
     spec:
+      initContainers:
+      - name: sync-website
+        image: alpine/git:latest
+        command:
+        - /bin/sh
+        - -c
+        - |
+          echo "Cloning website content..."
+          git clone -b main --depth 1 https://github.com/homelabjunkie/nginx-website.git /website /tmp/website &&
+          echo "Website content cloning."
+          cp -r /tmp/website/* /usr/share/nginx/html/ &&
+          echo "Website content copied to Nginx directory."
+          ls -la /usr/share/nginx/html/
+        volumeMounts:
+        - name: nginx-website
+          mountPath: /usr/share/nginx/html
       containers:
       - name: nginx
         image: nginx:alpine
+        volumeMounts:
+        - name: nginx-website
+          mountPath: /usr/share/nginx/html
         resources:
           requests:
             cpu: "100m"
@@ -28,3 +49,6 @@ spec:
           containerPort: 80
         - name: https
           containerPort: 443
+      volumes:
+      - name: nginx-website
+        emptyDir: {}
