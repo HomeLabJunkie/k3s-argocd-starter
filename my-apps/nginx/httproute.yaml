@@ -9,7 +9,7 @@ spec:
     - name: gateway-external
       namespace: gateway
   hostnames:
-    - "nginx.homelabjunkie.com"
+    - "www.homelabjunkie.com"
   rules:
     - matches:
         - path:
