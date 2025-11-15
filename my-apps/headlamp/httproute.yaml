@@ -5,7 +5,7 @@ metadata:
   namespace: kube-system
 spec:
   parentRefs:
-    - name: gateway-internal
+    - name: gateway-external
       namespace: gateway
   hostnames:
     - "headlamp.homelabjunkie.com"
