@@ -3,7 +3,7 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: yourapp-smb
+  name: smb
 provisioner: smb.csi.k8s.io
 parameters:
   # Point directly to the ollama subfolder on the SMB share
