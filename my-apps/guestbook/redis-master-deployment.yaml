@@ -20,10 +20,13 @@ spec:
     spec:
       containers:
       - name: master
-        image: k8s.gcr.io/redis:e2e
+        image: k8s.gcr.io/redis:latest
         resources:
           requests:
             cpu: 100m
             memory: 100Mi
+          limits:
+            cpu: 200m
+            memory: 200Mi
         ports:
         - containerPort: 6379
