@@ -8,9 +8,9 @@ storageClasses:
   defaultClass: false
   parameters:
     server: 192.168.1.5
-    share: /mnt/generaltank/k8s/
+    share: /nfs/jeff/
   mountOptions:
-    - nfsvers=4.1
+    - nfsvers=3
 
 csiDriver:
   name: nfs.csi.k8s.io
