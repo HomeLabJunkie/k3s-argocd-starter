@@ -6,7 +6,7 @@ metadata:
   name: smb
 provisioner: smb.csi.k8s.io
 parameters:
-  # Point directly to the ollama subfolder on the SMB share
+  # Point directly to the desired subfolder on the SMB share
   source: //192.168.1.250/k3s/smbshare
   csi.storage.k8s.io/node-stage-secret-name: smbcreds
   csi.storage.k8s.io/node-stage-secret-namespace: csi-driver-smb
