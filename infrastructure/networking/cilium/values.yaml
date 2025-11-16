@@ -17,7 +17,7 @@ ipam:
   mode: kubernetes
 operator:
   rollOutPods: true
-  replicas: 1
+  replicas: 3
   resources:
     limits:
       cpu: 500m
