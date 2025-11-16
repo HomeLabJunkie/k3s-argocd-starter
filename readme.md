@@ -1,15 +1,10 @@
-🚀 Kubernetes Starter Kit
+🚀 My Kubernetes Homelab
 =========================
-
-Tutorial Video
-
-[![Tutorial Walkthrough Video](https://img.youtube.com/vi/AY5mC5rDUcw/0.jpg)](https://youtu.be/AY5mC5rDUcw)
-
 
 
 > Modern GitOps deployment structure using Argo CD on Kubernetes
 
-This starter kit provides a production-ready foundation for deploying applications and infrastructure components using GitOps principles. Compatible with both Raspberry Pi and x86 systems.
+This method provides a production-ready foundation for deploying applications and infrastructure components using GitOps principles. 
 
 ## 📋 Table of Contents
 
@@ -35,7 +30,7 @@ This starter kit provides a production-ready foundation for deploying applicatio
   - Storage support (OpenEBS works with ZFS or standard directories)
   - NFS and CIFS support (optional)
   - Open-iSCSI
-- Cloudflare account (for DNS and Tunnel)
+- Cloudflare account (for DNS and Secure Tunnel)
 - Local DNS setup (one of the following):
   - Local DNS server ([AdGuard Home setup guide](docs/adguard-home-setup.md))
   - Router with custom DNS capabilities (e.g., Firewalla)
